@@ -1,1 +1,1 @@
-# indiedut-nuxt-admin
+# indiedut-nuxt-teacher
