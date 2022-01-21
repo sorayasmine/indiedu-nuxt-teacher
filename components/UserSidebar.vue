@@ -31,7 +31,7 @@
         </li>
         <li>
           <NuxtLink
-            :to="{ name: 'dashboard-siswa' }"
+            :to="{ name: 'dashboard-kelas' }"
             class="flex items-center p-2 space-x-4 rounded-md font-medium hover:bg-gray-100 hover:text-primary"
           >
             <svg
@@ -49,7 +49,7 @@
         </li>
         <li>
           <NuxtLink
-            :to="{ name: 'dashboard-siswa-pelajaran-terakhir' }"
+            :to="{ name: 'dashboard-materi' }"
             class="flex items-center p-2 space-x-4 rounded-md font-medium hover:bg-gray-100 hover:text-primary transition duration-200"
           >
             <svg
@@ -69,7 +69,7 @@
         </li>
         <li>
           <NuxtLink
-            to="/KelasSiswa"
+            :to="{ name: 'dashboard-siswa' }"
             class="flex items-center p-2 space-x-4 rounded-md font-medium hover:bg-gray-100 hover:text-primary transition duration-200"
           >
             <svg
@@ -87,7 +87,7 @@
         </li>
         <li class="border-b pb-4">
           <NuxtLink
-            :to="{ name: 'dashboard-siswa-transaction' }"
+            :to="{ name: 'dashboard-tugas' }"
             class="flex items-center p-2 space-x-4 rounded-md font-medium hover:bg-gray-100 hover:text-primary transition duration-200"
           >
             <svg
@@ -113,7 +113,7 @@
           class="text-gray-500 font-medium hover:bg-gray-100 hover:text-primary transition duration-200"
         >
           <NuxtLink
-            :to="{ name: 'dashboard-siswa-profile' }"
+            :to="{ name: 'dashboard-profile' }"
             class="flex items-center p-2 space-x-4 rounded-md"
           >
             <svg
@@ -137,7 +137,7 @@
           class="text-gray-500 font-medium hover:bg-gray-100 hover:text-primary transition duration-200"
         >
           <NuxtLink
-            :to="{ name: 'dashboard-siswa-notification' }"
+            :to="{ name: 'dashboard-notification' }"
             class="flex items-center p-2 space-x-4 rounded-md"
           >
             <svg

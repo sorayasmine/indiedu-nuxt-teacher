@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex justify-between mb-12">
+  <div class="w-full flex h-24 justify-between mb-12 bg-white">
     <div class="space-y-2">
       <h2 class="text-2xl font-bold leading-tight text-primaryText">
         <slot name="header"></slot>
@@ -9,7 +9,7 @@
       </p>
     </div>
     <div>
-      <div v-if="!guest" class="cursor-pointer">
+      <div class="cursor-pointer">
         <div class="flex items-center" @click="profile = !profile">
           <div
             class="px-3 py-1 bg-secondary text-lg font-semibold uppercase text-white rounded-full"
@@ -36,7 +36,6 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 import DropdownMenu from '@/components/partials/DropdownMenu.vue'
 
 export default {
@@ -49,9 +48,6 @@ export default {
     }
   },
   computed: {
-    ...mapGetters({
-      guest: 'guest',
-    }),
     firstLetterUser() {
       if (this.$auth.loggedIn) {
         return this.$store.state.auth.user.name.charAt(0)

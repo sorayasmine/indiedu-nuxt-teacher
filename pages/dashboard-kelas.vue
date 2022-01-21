@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="w-full object-right text-right">
     <button
-      class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      class="block float-right text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
       type="button"
       data-modal-toggle="authentication-modal"
     >
@@ -112,23 +112,46 @@
         </div>
       </div>
     </div>
-    <div class="w-full object-right text-right">
-      <table class="table-auto">
+    <div class="">
+      <table class="table-auto :grades='grades'">
         <thead>
           <tr>
+            <th>No</th>
             <th>Kelas</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1 SD</td>
-          </tr>
-          <tr>
-            <td>1 SMP</td>
-            <td>1 SMA</td>
+          <tr v-for="grade in grades" :key="grade.id">
+            <td>{{ grade.id }}</td>
+            <td>{{ grade.name }}</td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  // data() {
+  //   return {
+  //     grades: '',
+  //   }
+  // },
+  methods: {
+    async data() {
+      try {
+        const response = await this.$axios.get(
+          'https://indiedu-api.herokuapp.com/api/grade'
+        )
+        console.log(response.data.message)
+        return {
+          grades: response,
+        }
+      } catch ({ response }) {
+        console.log(response.data.message)
+      }
+    },
+  },
+}
+</script>
