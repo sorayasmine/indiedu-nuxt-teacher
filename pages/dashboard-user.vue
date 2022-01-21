@@ -202,7 +202,6 @@
 
 <script>
 export default {
-  name: 'IndexPage',
-  middleware: 'auth',
+  layout: 'dashboard.vue',
 }
 </script>
