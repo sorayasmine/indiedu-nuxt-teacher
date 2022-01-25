@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex h-24 justify-between mb-12 bg-white">
+  <nav class="w-full flex justify-between bg-white">
     <div class="space-y-2">
       <h2 class="text-2xl font-bold leading-tight text-primaryText">
         <slot name="header"></slot>
@@ -32,7 +32,7 @@
         <dropdown-menu :profile="profile" width="w-36"></dropdown-menu>
       </div>
     </div>
-  </div>
+  </nav>
 </template>
 
 <script>

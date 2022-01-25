@@ -1,9 +1,9 @@
 <template>
   <!-- give the sidebar z-50 class so its higher than the navbar if you want to see the logo -->
   <!-- you will need to add a little "X" button next to the logo in order to close it though -->
-  <div
+  <aside
     id="main-nav"
-    class="min-h-full px-3 py-3 space-y-1 w-80 fixed h-screen bg-white border-r"
+    class="min-h-full px-3 py-3 space-y-1 w-80 h-screen bg-white border-r"
   >
     <div class="w-full h-20 border-b flex px-4 items-center mb-8">
       <logo />
@@ -183,7 +183,7 @@
         </li>
       </ul>
     </div>
-  </div>
+  </aside>
 </template>
 
 <script>
@@ -197,6 +197,11 @@ export default {
   },
   methods: {
     ...mapMutations({ toggle: 'drawer/toggle' }),
+    async logout() {
+      try {
+        await this.$auth.logout()
+      } catch (err) {}
+    },
   },
 }
 </script>
