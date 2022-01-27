@@ -70,7 +70,7 @@ export default {
       updateSubmit: false,
     }
   },
-  mounted() {
+  fetch() {
     this.showData()
   },
   methods: {

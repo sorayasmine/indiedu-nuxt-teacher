@@ -69,7 +69,7 @@
         </li>
         <li>
           <NuxtLink
-            :to="{ name: 'dashboard-siswa' }"
+            :to="{ name: 'dashboard-subject' }"
             class="flex items-center p-2 space-x-4 rounded-md font-medium hover:bg-gray-100 hover:text-primary transition duration-200"
           >
             <svg
@@ -82,12 +82,12 @@
                 d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"
               />
             </svg>
-            <span>Siswa</span>
+            <span>Subject</span>
           </NuxtLink>
         </li>
-        <li class="border-b pb-4">
+        <li>
           <NuxtLink
-            :to="{ name: 'dashboard-tugas' }"
+            :to="{ name: 'dashboard-section' }"
             class="flex items-center p-2 space-x-4 rounded-md font-medium hover:bg-gray-100 hover:text-primary transition duration-200"
           >
             <svg
@@ -104,7 +104,29 @@
                 d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
               />
             </svg>
-            <span>Tugas Siswa</span>
+            <span>Section</span>
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink
+            :to="{ name: 'dashboard-subsection' }"
+            class="flex items-center p-2 space-x-4 rounded-md font-medium hover:bg-gray-100 hover:text-primary transition duration-200"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+              />
+            </svg>
+            <span>Subsection</span>
           </NuxtLink>
         </li>
       </ul>
@@ -113,7 +135,7 @@
           class="text-gray-500 font-medium hover:bg-gray-100 hover:text-primary transition duration-200"
         >
           <NuxtLink
-            :to="{ name: 'dashboard-profile' }"
+            :to="{ name: 'dashboard-subsection' }"
             class="flex items-center p-2 space-x-4 rounded-md"
           >
             <svg

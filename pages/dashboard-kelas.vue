@@ -75,7 +75,7 @@ export default {
       updateSubmit: false,
     }
   },
-  created() {
+  fetch() {
     this.showData()
   },
   methods: {
