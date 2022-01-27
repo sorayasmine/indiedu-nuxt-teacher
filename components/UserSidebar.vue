@@ -49,7 +49,7 @@
         </li>
         <li>
           <NuxtLink
-            :to="{ name: 'dashboard-materi' }"
+            :to="{ name: 'dashboard-kategori' }"
             class="flex items-center p-2 space-x-4 rounded-md font-medium hover:bg-gray-100 hover:text-primary transition duration-200"
           >
             <svg
@@ -64,7 +64,7 @@
                 clip-rule="evenodd"
               />
             </svg>
-            <span>Materi</span>
+            <span>Kategori</span>
           </NuxtLink>
         </li>
         <li>

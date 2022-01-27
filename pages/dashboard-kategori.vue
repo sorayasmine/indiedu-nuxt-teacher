@@ -1,15 +1,13 @@
 <template>
   <div class="w-full px-20 py-10">
     <div class="mx-auto w-full bg-white">
-      <!-- Modal toggle -->
       <form @submit.prevent="createData">
         <input
           id="name"
           v-model.number="name"
           type="text"
-          placeholder="Nama Kelas"
+          placeholder="Nama Kategori"
         />
-        <input id="type" v-model="type" type="text" placeholder="Nama Tipe" />
         <button
           v-show="!updateSubmit"
           type="submit"
@@ -32,27 +30,25 @@
           <thead class="border-2">
             <tr>
               <th>No</th>
-              <th>Kelas</th>
-              <th>Tipe</th>
+              <th>Kategori</th>
               <th>Action</th>
             </tr>
           </thead>
 
           <tbody>
-            <tr v-for="(grade, index) in grades" :key="index">
+            <tr v-for="(category, index) in categories" :key="index">
               <td>{{ index + 1 }}</td>
-              <td>{{ grade.name }}</td>
-              <td>{{ grade.type }}</td>
+              <td>{{ category.name }}</td>
               <td class="flex">
                 <button
                   class="block text-white bg-red-600"
-                  @click="deleteData(grade.id)"
+                  @click="deleteData(category.id)"
                 >
                   Delete
                 </button>
                 <button
                   class="block text-white bg-yellow-300"
-                  @click="editData(grade)"
+                  @click="editData(category)"
                 >
                   Edit
                 </button>
@@ -69,24 +65,23 @@
 export default {
   data() {
     return {
-      grades: [],
+      categories: [],
       name: '',
-      type: '',
       updateSubmit: false,
     }
   },
-  created() {
+  mounted() {
     this.showData()
   },
   methods: {
     async showData() {
       try {
-        const { data } = await this.$axios.$get('/grade', {
+        const { data } = await this.$axios.$get('/category', {
           headers: {
             Authorization: 'Bearer ' + this.$auth.strategy.token.get(),
           },
         })
-        this.grades = data
+        this.categories = data
         console.log(data)
       } catch ({ data }) {
         console.log(data)
@@ -95,7 +90,7 @@ export default {
     async createData() {
       try {
         await this.$axios.$post(
-          `/grade`,
+          `/category`,
 
           {
             name: this.name,
@@ -114,25 +109,24 @@ export default {
     },
     async deleteData(id) {
       try {
-        const data = await this.$axios.$delete(`/grade/${id}`)
-        this.grades.splice(id)
+        const data = await this.$axios.$delete(`/category/${id}`)
+        this.categories.splice(id)
         this.showData()
         console.log(data)
       } catch (err) {
         console.error(err)
       }
     },
-    editData(grade) {
+    editData(category) {
       this.updateSubmit = true
-      this.id = grade.id
-      this.name = grade.name
-      this.type = grade.type
+      this.id = category.id
+      this.name = category.name
+      this.type = category.type
     },
     async updateData() {
       try {
-        await this.$axios.$post(`/grade/${this.id}`, {
+        await this.$axios.$post(`/category/${this.id}`, {
           name: this.name,
-          type: this.type,
         })
         this.updateSubmit = false
         this.showData()
