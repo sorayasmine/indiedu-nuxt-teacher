@@ -16,10 +16,14 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['@/assets/css/main.css'],
+  css: ['@/assets/css/main.css', 'sweetalert2/dist/sweetalert2.min.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/vee-validate.js', '~/plugins/axios.js'],
+  plugins: [
+    '~/plugins/vee-validate.js',
+    '~/plugins/axios.js',
+    '~/plugins/sweetalert.js',
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -36,6 +40,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/auth-next',
+    'vue-sweetalert2/nuxt',
   ],
   auth: {
     strategies: {
